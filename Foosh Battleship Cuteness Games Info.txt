@@ -1,0 +1,45 @@
+Protokoll: Foosh Battleship Cuteness in 3D
+Spielinfos:	1. Das Tier: kann essen, bewegt sich in Form von
+		2. Futter: positives Essen: Applepie, Fleischkeule, Fisch -> Kanone wird mit positive Munitionen geladen.
+												( Applepie -> Feuerschuss, 
+											          Fleischkeule-> Kanonenkugel
+											          Fisch ->Streukugeln)
+			   negatives Essen: Stein, Kot 			  -> Kanone wird mit Glitzer geladen.(keine Auswirkungen auf das Schiff) 
+		3. Schiff steht im Meer und hat 600hp.
+		4. Munition und Kanone.
+		5. Wasser und Meer
+		6. Acagamics Figur als Pirat: Bonuspunkte
+                7. Zeitangabe
+                8. Punkteverteilung: Acagamics Figur = 100p
+				     Feuerschuss = 40p
+                                     Kanonenkugel = 20p
+                                     Streukugeln = 10p
+                                     
+               
+
+
+a) Single-PlayerMode: Das Schiff soll nach bestimmter Zeit zerstört werden.
+
+Vorwort: Es gibt zwei Kameraansichten, die sich abwechseln, je nach Situation und Zustand von Fe.
+
+1. Kamerasicht: Fe läuft rum und muss Futter(s. oben) essen. Sobald sie etwas gegessen hat, dann lädt sich die Kanone mit der entsprechenden Munitionen. 
+
+2. Kamerasicht: Aus der Sicht der Kanone wird die Munition auf das Schiff geschossen. Je nach Munitionen wird das Schiff entsprechend beschädigt.
+   Bei Feuerschuss: Das Schiff erhält einen "Damage over time" und brennt.
+   Bei Kanonenkugel: Das Schiff erleidet einen größeren Schaden.(In Form von einem Loch oder Ähnliches.)
+   Bei Streukugeln: Schiff erleidet verteilte Schaden.
+   Bei Glitzer: kein Schaden.
+   WICHTIG: man kann die Kanone mit max 10 Kugeln aufladen. Man muss taktisch die Arten der Munitionen aufladen.
+   Bei allen Schüssen verschiedene Soundeffekte.
+
+
+
+
+
+
+
+
+
+b) 2-PlayerMode: Wer das Schiff schneller zerstört gewinnt.
+Vorwort: waagerechter Splitscreen. Und beide Spieler erhalten Kameraeigenschaften wie von Single-Playermode.
+Ansonsten Spielprinzip wie bei Single-Playermode. Tiere haben unterschiedliche Farben.
