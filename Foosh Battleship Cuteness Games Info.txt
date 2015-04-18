@@ -1,5 +1,5 @@
 Protokoll: Foosh Battleship Cuteness in 3D
-Spielinfos:	1. Das Tier: kann essen, bewegt sich in Form von
+Spielinfos:	1. Das Tier: kann essen, bewegt sich in Form von PAcman
 		2. Futter: positives Essen: Applepie, Fleischkeule, Fisch -> Kanone wird mit positive Munitionen geladen.
 												( Applepie -> Feuerschuss, 
 											          Fleischkeule-> Kanonenkugel
