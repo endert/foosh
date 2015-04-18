@@ -16,7 +16,7 @@ public class PlayerSkript : MonoBehaviour {
         
 	}
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter(Collision col)
     {
         Debug.Log("jhjjfgjgf");
         if (col.gameObject.name == "Ground")
@@ -27,7 +27,7 @@ public class PlayerSkript : MonoBehaviour {
 
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter(Collider col)
     {
         if (col.name == "ham(Clone)")
             col.name = "ham";
@@ -49,7 +49,8 @@ public class PlayerSkript : MonoBehaviour {
         {
             foodStack.Push(col.gameObject);
             col.gameObject.transform.position = new Vector3(-122 + 5 * (foodStack.Count - 1), -100, 1);
-            //col.gameObject.transform.localScale = new Vector3(2, 2, 1);
+            col.gameObject.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+            col.gameObject.transform.localScale = new Vector3(1, 1, 1);
             //col.gameObject.SetActive(false);
             Debug.Log(foodStack.Peek());
         }
@@ -75,22 +76,38 @@ public class PlayerSkript : MonoBehaviour {
 
     if(Input.GetKey(KeyCode.A))
     {
-        GetComponent<Rigidbody2D>().AddForce(Vector3.left * speed * Time.deltaTime);
+        //GetComponent<Rigidbody>().AddForce(Vector3.left * speed * Time.deltaTime);
+
+        Vector3 position = this.transform.position;
+        position.x--;
+        this.transform.position = position;
     }
 
     if (Input.GetKey(KeyCode.D))
     {
-        GetComponent<Rigidbody2D>().AddForce(Vector3.right * speed * Time.deltaTime);
+        //GetComponent<Rigidbody>().AddForce(Vector3.right * speed * Time.deltaTime);
+
+        Vector3 position = this.transform.position;
+        position.x++;
+        this.transform.position = position;
     }
 
     if (Input.GetKey(KeyCode.W))
     {
-        GetComponent<Rigidbody2D>().AddForce(Vector3.up * speed * Time.deltaTime);
+        //GetComponent<Rigidbody>().AddForce(Vector3.up * speed * Time.deltaTime);
+
+        Vector3 position = this.transform.position;
+        position.z++;
+        this.transform.position = position;
     }
 
     if (Input.GetKey(KeyCode.S))
     {
-        GetComponent<Rigidbody2D>().AddForce(Vector3.down * speed * Time.deltaTime);
+        //GetComponent<Rigidbody>().AddForce(Vector3.down * speed * Time.deltaTime);
+
+        Vector3 position = this.transform.position;
+        position.z--;
+        this.transform.position = position;
     }
 
     }
