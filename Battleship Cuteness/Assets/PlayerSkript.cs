@@ -9,6 +9,7 @@ public class PlayerSkript : MonoBehaviour {
 
     private bool isPressed = false;
     private int counter = 1;
+    private int counterPos = 0;
  
 	// Use this for initialization
 	void Start () {
@@ -28,15 +29,28 @@ public class PlayerSkript : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.name == "Ham(Clone)")
-            col.name = "Ham";
+        if (col.name == "ham(Clone)")
+            col.name = "ham";
 
-        if (col.gameObject.name == "Ham")
+        if (col.name == "cake(Clone)")
+            col.name = "cake";
+
+        if (col.name == "poo(Clone)")
+            col.name = "poo";
+
+        if (col.name == "stone(Clone)")
+            col.name = "stone";
+
+        if (col.name == "fish(Clone)")
+            col.name = "fish";
+
+
+        if (col.gameObject.name == "ham" || col.gameObject.name == "cake" || col.gameObject.name == "fish" || col.gameObject.name == "poo" || col.gameObject.name == "stone")
         {
-            Debug.Log("lkdjsajlfk");
             foodStack.Push(col.gameObject);
-            //Destroy(col.gameObject);
-            col.gameObject.SetActive(false);
+            col.gameObject.transform.position = new Vector3(-122 + 5 * (foodStack.Count - 1), -100, 1);
+            //col.gameObject.transform.localScale = new Vector3(2, 2, 1);
+            //col.gameObject.SetActive(false);
             Debug.Log(foodStack.Peek());
         }
 
@@ -47,14 +61,9 @@ public class PlayerSkript : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Space) && !isPressed)
         {
-            //var gameObj : GameObject = GameObject.CreatePrimitive(foodStack.Pop());
-            //gameObj.transform.position = Vector3(0, 0.5, 0);
-
             foodStack.Peek().gameObject.SetActive(true);
             Instantiate(foodStack.Peek(), new Vector3(counter++ * 2.0f, 0f, 0f), Quaternion.identity);
-
-           
-
+            foodStack.Peek().gameObject.transform.localScale = new Vector3(1, 1, 1);
             foodStack.Pop().gameObject.SetActive(false);            
             isPressed = true;
         }
