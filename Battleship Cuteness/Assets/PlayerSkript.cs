@@ -18,7 +18,6 @@ public class PlayerSkript : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        Debug.Log("jhjjfgjgf");
         if (col.gameObject.name == "Ground")
         {
             // object collided with something called "Ground":
@@ -45,8 +44,8 @@ public class PlayerSkript : MonoBehaviour {
     //        col.name = "fish";
 
 
-        if (col.gameObject.tag == "ham" || col.gameObject.tag == "cake" || col.gameObject.tag == "fish"
-            || col.gameObject.tag == "poo" || col.gameObject.tag == "stone")
+        if ((col.gameObject.tag == "ham" || col.gameObject.tag == "cake" || col.gameObject.tag == "fish"
+            || col.gameObject.tag == "poo" || col.gameObject.tag == "stone") && foodStack.Count < 10)
         {
             foodStack.Push(col.gameObject);
             col.gameObject.transform.position = new Vector3(-122 + 5 * (foodStack.Count - 1), -100, 1);
