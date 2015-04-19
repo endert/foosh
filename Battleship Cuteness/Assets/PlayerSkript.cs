@@ -29,23 +29,24 @@ public class PlayerSkript : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.name == "ham(Clone)")
-            col.name = "ham";
+    //    if (col.name == "ham(Clone)")
+    //        col.name = "ham";
 
-        if (col.name == "cake(Clone)")
-            col.name = "cake";
+    //    if (col.name == "cake(Clone)")
+    //        col.name = "cake";
 
-        if (col.name == "poo(Clone)")
-            col.name = "poo";
+    //    if (col.name == "poo(Clone)")
+    //        col.name = "poo";
 
-        if (col.name == "stone(Clone)")
-            col.name = "stone";
+    //    if (col.name == "stone(Clone)")
+    //        col.name = "stone";
 
-        if (col.name == "fish(Clone)")
-            col.name = "fish";
+    //    if (col.name == "fish(Clone)")
+    //        col.name = "fish";
 
 
-        if (col.gameObject.name == "ham" || col.gameObject.name == "cake" || col.gameObject.name == "fish" || col.gameObject.name == "poo" || col.gameObject.name == "stone")
+        if (col.gameObject.tag == "ham" || col.gameObject.tag == "cake" || col.gameObject.tag == "fish"
+            || col.gameObject.tag == "poo" || col.gameObject.tag == "stone")
         {
             foodStack.Push(col.gameObject);
             col.gameObject.transform.position = new Vector3(-122 + 5 * (foodStack.Count - 1), -100, 1);
