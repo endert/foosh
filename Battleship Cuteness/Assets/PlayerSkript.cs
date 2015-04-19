@@ -10,9 +10,13 @@ public class PlayerSkript : MonoBehaviour {
     private bool isPressed = false;
     private int counter = 1;
     private int counterPos = 0;
+	public Camera shipcam;
+	public Camera labocam;
+	public bool labo = false;
  
 	// Use this for initialization
 	void Start () {
+		shipcam.enabled = false;
         
 	}
 
@@ -28,20 +32,7 @@ public class PlayerSkript : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-    //    if (col.name == "ham(Clone)")
-    //        col.name = "ham";
 
-    //    if (col.name == "cake(Clone)")
-    //        col.name = "cake";
-
-    //    if (col.name == "poo(Clone)")
-    //        col.name = "poo";
-
-    //    if (col.name == "stone(Clone)")
-    //        col.name = "stone";
-
-    //    if (col.name == "fish(Clone)")
-    //        col.name = "fish";
 
 
         if ((col.gameObject.tag == "ham" || col.gameObject.tag == "cake" || col.gameObject.tag == "fish"
@@ -50,7 +41,10 @@ public class PlayerSkript : MonoBehaviour {
             foodStack.Push(col.gameObject);
             col.gameObject.transform.position = new Vector3(-122 + 5 * (foodStack.Count - 1), -100, 1);
             col.gameObject.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
-            col.gameObject.transform.localScale = new Vector3(1, 1, 1);
+			if (col.gameObject.tag == "ham")
+			col.gameObject.transform.localScale = new Vector3(1.6f, 1.6f, 1.6f);
+			else
+			col.gameObject.transform.localScale = new Vector3(1, 1, 1);
             //col.gameObject.SetActive(false);
             Debug.Log(foodStack.Peek());
         }
@@ -109,6 +103,12 @@ public class PlayerSkript : MonoBehaviour {
         position.z--;
         this.transform.position = position;
     }
+	if (foodStack.Count >= 10 && !labo) {
+			labo = true;
+		labocam.enabled = false;
+		shipcam.enabled = true;
+		}
+
 
     }
 }

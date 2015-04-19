@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour {
         
 	}
 
-    void OnGUI()
+    /*void OnGUI()
     {
         GUI.Label(new Rect(680, 10, 100, 20), timerText + " sec");
     }
@@ -35,4 +35,4 @@ public class Timer : MonoBehaviour {
 
 
     }
-}
+*/}
